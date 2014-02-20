@@ -35,10 +35,11 @@ RUN cpanm Carton
 #### Install fluentd
 # http://docs.fluentd.org/articles/install-by-rpm 
 # The following script is being edited for the execution of the root
-ADD fluentd/install-redhat.sh /tmp
+ADD fluentd/install-redhat.sh /tmp/
 RUN bash /tmp/install-redhat.sh
-ADD fluentd/td-agent.conf /etc/td-agent
-RUN sudo -u td-agent mkdir -p -m 775 /var/log/td-agent/tmp
+RUN rm -f /etc/td-agent/td-agent.conf
+ADD fluentd/td-agent.conf /etc/td-agent/
+RUN install -o td-agent -m 775 -d /var/log/td-agent/tmp
 
 #### Configure application and modules
 RUN mkdir /opt/my_app

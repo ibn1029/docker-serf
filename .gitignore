@@ -1,3 +1,4 @@
+*.swp
 my_app/my_app/local
 my_app/my_app/vendor
 my_app/my_app/log
