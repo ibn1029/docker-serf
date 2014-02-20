@@ -1,0 +1,4 @@
+requires 'Mojolicious', '4.43';
+requires 'Plack', '1.0030';
+requires 'Server::Starter', '0.17';
+requires 'Starlet', '0.21';
